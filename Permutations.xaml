@@ -1,0 +1,113 @@
+﻿<Window x:Class="Math_Helper.Permutations"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Math_Helper"
+        mc:Ignorable="d"
+        Title="Math Helper" Height="190" Width="550" ResizeMode="NoResize" FontFamily="Segoe UI Light" WindowStyle="None" AllowsTransparency="True" Background="{x:Null}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+
+        </Grid.RowDefinitions>
+
+        <Border CornerRadius="5" Grid.Column="0" Grid.Row="0" Grid.RowSpan="13" Grid.ColumnSpan="14" Background="White" BorderBrush="Black" BorderThickness="1" MouseLeftButtonDown="Border_MouseLeftButtonDown"/>
+
+        <Button x:Name="CloseMain" Margin="0, 0, 5, 0" Width="50" Height="20" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="14" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Click="CloseMain_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Border CornerRadius="6">
+                        <TextBlock Text="✖" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center" Focusable="False"/>
+                        <Border.Style>
+                            <Style TargetType="Border">
+                                <Setter Property="OverridesDefaultStyle" Value="True"/>
+                                <Setter Property="Background" Value="#BE0000"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#FFB5B5"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Border.Style>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="HideMain" Margin="0, 0, 40, 0" Width="50" Height="20" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="13" Background="#00D8FA" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Click="HideMain_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Border CornerRadius="6">
+                        <TextBlock Text="—" FontSize="17" HorizontalAlignment="Center" FontWeight="Bold" VerticalAlignment="Center" Focusable="False"/>
+                        <Border.Style>
+                            <Style TargetType="Border">
+                                <Setter Property="OverridesDefaultStyle" Value="True"/>
+                                <Setter Property="Background" Value="#00D8FA"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#B0F4FF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Border.Style>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <TextBlock Text="Permutations" FontSize="25" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Margin="10, 0" />
+        <TextBlock Text="Number of elements:" FontSize="25" Grid.Column="1" Grid.Row="2"/>
+        <TextBox x:Name="nNumber" Width="100" MaxLength="2" FontSize="25" Grid.Column="2" Grid.Row="2" Margin="5, 0"/>
+        <TextBlock Text="Number of possible permutations:" FontSize="25" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Left"/>
+        <TextBlock x:Name="PNumber" Width="100" FontSize="25" Grid.Column="3" Grid.Row="3"/>
+        <Button Grid.Column="0" Click="Calculate" Grid.Row="4" Margin="10" Height="50" Grid.ColumnSpan="14" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button.Template>
+                <ControlTemplate>
+                    <Border CornerRadius="6" BorderBrush="Black" BorderThickness="0">
+                        <TextBlock Text="Calculate" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Border.Style>
+                            <Style TargetType="Border">
+                                <Setter Property="OverridesDefaultStyle" Value="True"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#91EEFF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Border.Style>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Window>
